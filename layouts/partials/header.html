@@ -17,7 +17,7 @@
           <button id="menu-close" class="menu-toggle"><span class="screen-reader-text">Open Menu</span><span class="icon-close" aria-hidden="true"></span></button>
           <ul class="menu">
             {{ range $action := $.Site.Data.config.header.nav_links }}
-              {{ $page_url := trim $.URL "/" }}
+              {{ $page_url := trim $.Permalink "/" }}
               {{ $action_url := trim $action.url "/" }}
               {{ $action_style := $action.style | default "link" }}
               <li class="menu-item{{ if eq $page_url $action_url }} current-menu-item{{ end }}{{ if ne $action_style "link" }} menu-button{{ end }}">
